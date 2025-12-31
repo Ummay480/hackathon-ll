@@ -1,4 +1,4 @@
-# Hackathon LL - AI-Driven Development Projects
+# Hackathon II - AI-Driven Development Projects
 
 This repository contains multiple phases of AI-driven development projects.
 
