@@ -48,10 +48,14 @@ class TaskStorage:
                 with open(self._filename, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     self._tasks = data.get("tasks", [])
-                    # Calculate next ID based on existing tasks
-                    if self._tasks:
-                        max_id = max(task["id"] for task in self._tasks)
-                        self._next_id = max_id + 1
+                    # Use stored next_id if available, otherwise calculate from tasks
+                    self._next_id = data.get("next_id")
+                    if self._next_id is None:
+                        if self._tasks:
+                            max_id = max(task["id"] for task in self._tasks)
+                            self._next_id = max_id + 1
+                        else:
+                            self._next_id = 1
             except (json.JSONDecodeError, KeyError):
                 # If file is corrupted, start fresh
                 self._tasks = []

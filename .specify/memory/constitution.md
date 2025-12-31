@@ -1,15 +1,12 @@
 <!--
 Sync Impact Report - Constitution v1.0.0
 ========================================
-Version: 0.0.0 → 1.0.0 (MAJOR: Initial ratification)
-Date: 2025-12-28
+Version: 1.0.0 → 1.1.0 (MINOR: Allow file-based persistence)
+Date: 2025-12-31
 
 Changes:
-- Initial constitution ratification for Phase-1 Todo CLI Application
-- Established 10 foundational principles (Purpose, Philosophy, Scope, Agent Architecture, QA, Specification, Workflow, Error Handling, Evaluation, Enforcement)
-- Defined hard scope boundaries (CLI-only, in-memory, no databases, no UI)
-- Established strict agent hierarchy (Main Agent > Sub-Agents > Skills)
-- Enforced quality gates and workflow order
+- Updated Constitution to allow tasks.json for persistence to align with hackathon requirements
+- Moved from strictly in-memory to persistent file-based storage
 
 Templates Status:
 - ✅ spec-template.md: Aligned - mandatory user scenarios, acceptance criteria, edge cases match Section 6
@@ -112,7 +109,7 @@ This phase is intentionally minimal in scope but maximal in quality.
 ### Allowed
 
 - CLI-based interaction ONLY
-- In-memory data ONLY (no persistence across sessions)
+- In-memory data with file-based persistence via tasks.json
 - Single-user execution
 - Synchronous commands
 - Deterministic operations
@@ -122,7 +119,7 @@ This phase is intentionally minimal in scope but maximal in quality.
 The following are STRICTLY PROHIBITED in Phase-1 and will result in IMMEDIATE REJECTION:
 
 - UI / Frontend (web, mobile, desktop GUI)
-- Databases (SQL, NoSQL, file-based persistence)
+- Databases (SQL, NoSQL, etc. - tasks.json is allowed)
 - External APIs or network calls
 - Background services or daemons
 - Async workers or multi-threading
@@ -326,4 +323,4 @@ No negotiation. No exceptions.
 
 ---
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-28 | **Last Amended**: 2025-12-28
+**Version**: 1.1.0 | **Ratified**: 2025-12-28 | **Last Amended**: 2025-12-31
